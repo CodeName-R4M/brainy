@@ -2,14 +2,14 @@ import { OPERATION_LABELS, LEVELS, levelLabel } from '../data/questions.js';
 import { loadStats, accuracyOf } from '../data/stats.js';
 
 const MODULES = [
-  { op: 'addition', emoji: '➕', color: 'bg-warning/10 text-warning' },
-  { op: 'subtraction', emoji: '➖', color: 'bg-sky/10 text-sky' },
-  { op: 'multiplication', emoji: '✖️', color: 'bg-lime/10 text-lime' },
-  { op: 'division', emoji: '➗', color: 'bg-accent/10 text-accent' },
-  { op: 'tables', emoji: '📊', color: 'bg-gold/10 text-gold' },
-  { op: 'mixed_operations', emoji: '🔀', color: 'bg-tangerine/10 text-tangerine' },
-  { op: 'decimal_addition', emoji: '🔢', color: 'bg-primary/10 text-primary' },
-  { op: 'decimal_subtraction', emoji: '🔢', color: 'bg-destructive/10 text-destructive' }
+  { op: 'addition', emoji: '+', color: 'bg-warning/10 text-warning' },
+  { op: 'subtraction', emoji: '−', color: 'bg-sky/10 text-sky' },
+  { op: 'multiplication', emoji: '×', color: 'bg-lime/10 text-lime' },
+  { op: 'division', emoji: '÷', color: 'bg-accent/10 text-accent' },
+  { op: 'tables', emoji: '▥', color: 'bg-gold/10 text-gold' },
+  { op: 'mixed_operations', emoji: '⇄', color: 'bg-tangerine/10 text-tangerine' },
+  { op: 'decimal_addition', emoji: '∑', color: 'bg-primary/10 text-primary' },
+  { op: 'decimal_subtraction', emoji: '∑', color: 'bg-destructive/10 text-destructive' }
 ];
 
 export default function Dashboard({ user, level, onLevel, onPick, onHome, onSignOut }) {
@@ -18,21 +18,21 @@ export default function Dashboard({ user, level, onLevel, onPick, onHome, onSign
   const accuracy = accuracyOf(stats);
 
   const cards = [
-    { label: 'Points', value: stats.points.toLocaleString(), icon: '⭐', color: 'bg-gold/10 text-gold' },
-    { label: 'Day Streak', value: stats.streak, icon: '🔥', color: 'bg-tangerine/10 text-tangerine' },
-    { label: 'Accuracy', value: accuracy == null ? '—' : `${accuracy}%`, icon: '🎯', color: 'bg-success/10 text-success' },
-    { label: 'Level', value: levelLabel(level), icon: '🪜', color: 'bg-sky/10 text-sky' }
+    { label: 'Points', value: stats.points.toLocaleString(), icon: '★', color: 'bg-gold/10 text-gold' },
+    { label: 'Day Streak', value: stats.streak, icon: '↗', color: 'bg-tangerine/10 text-tangerine' },
+    { label: 'Accuracy', value: accuracy == null ? '—' : `${accuracy}%`, icon: '◎', color: 'bg-success/10 text-success' },
+    { label: 'Level', value: levelLabel(level), icon: '9', color: 'bg-sky/10 text-sky' }
   ];
 
   const isNew = stats.sessions === 0;
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background dashboard-page">
       <header className="sticky top-0 z-40 border-b border-border bg-background/80 backdrop-blur">
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
             <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-hero shadow-glow-primary">
-              <span className="text-lg text-primary-foreground">🧮</span>
+              <span className="text-lg font-black text-primary-foreground" aria-hidden="true">A</span>
             </div>
             <span className="text-lg font-extrabold">Abakids</span>
           </div>
@@ -59,14 +59,14 @@ export default function Dashboard({ user, level, onLevel, onPick, onHome, onSign
           <div className="flex items-center justify-between gap-4">
             <div>
               <p className="text-sm font-semibold text-primary-foreground/90">Welcome back</p>
-              <h1 className="mt-1 text-2xl font-extrabold md:text-3xl">Hi, {displayName} 👋</h1>
+              <h1 className="mt-1 text-2xl font-extrabold md:text-3xl">Hi, {displayName}!</h1>
               <p className="mt-2 max-w-xl text-sm text-primary-foreground/90">
                 {isNew
                   ? "You're just getting started. Pick a module below and solve your first drill to start earning points."
                   : `You've completed ${stats.sessions} drill${stats.sessions === 1 ? '' : 's'}. Keep the streak going!`}
               </p>
             </div>
-            <div className="hidden text-5xl md:block">🚀</div>
+            <div className="hidden text-5xl font-black md:block" aria-hidden="true">+ ×</div>
           </div>
         </section>
 
