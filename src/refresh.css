@@ -148,3 +148,45 @@ button:focus-visible, input:focus-visible { outline: 3px solid hsl(var(--primary
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
+
+body { font-size: 14.5px; line-height: 1.55; }
+.landing-page > header .container > div:first-child > span,
+.dashboard-page > header .container > div:first-child > span { font-size: 1rem; }
+.landing-page > header button,
+.dashboard-page > header button { font-size: .82rem; }
+.landing-page h1 { font-size: clamp(1.8rem, 5vw, 3.4rem); line-height: 1.1; }
+.landing-page > section:first-of-type .container > div > p { font-size: clamp(.92rem, 1.7vw, 1.05rem); line-height: 1.65; }
+.landing-page > section:nth-of-type(2) h2,
+.landing-page > section:nth-of-type(3) h2,
+.landing-page > section:last-of-type h2 { font-size: clamp(1.5rem, 3.2vw, 1.95rem); line-height: 1.2; }
+.landing-page > section:nth-of-type(2) h3,
+.landing-page > section:nth-of-type(3) h3 { font-size: 1rem; line-height: 1.35; }
+.landing-page > section:nth-of-type(2) .container > div:first-child > p,
+.landing-page > section:nth-of-type(3) .container > div:first-child > p { font-size: .93rem; }
+.landing-page > section:last-of-type .container > div > p { font-size: .93rem; line-height: 1.6; }
+.landing-page > section:first-of-type button,
+.landing-page > section:last-of-type button { font-size: .88rem; }
+.dashboard-page main > section:first-child h1 { font-size: clamp(1.4rem, 3.2vw, 1.8rem); line-height: 1.2; }
+.dashboard-page main > section:first-child p { font-size: .88rem; line-height: 1.55; }
+.dashboard-page main > div.grid > div > div:nth-child(2) { font-size: 1.55rem; }
+.dashboard-page main > div.grid > div > div:last-child,
+.dashboard-page main > div.grid > button p { font-size: .82rem; }
+.dashboard-page main > div.grid > button h3 { font-size: .98rem; }
+.dashboard-page main > h2 { font-size: 1.1rem; }
+.dashboard-page main button { font-size: .84rem; }
+.practice-page > header > div { font-size: 1.1rem; }
+.practice-page .inline-block.font-mono { font-size: clamp(1.4rem, 3.2vw, 2rem); line-height: 1.35; }
+.practice-page .text-center.font-mono { font-size: clamp(1.7rem, 4.4vw, 2.6rem); line-height: 1.2; }
+.practice-page form input { font-size: 1.1rem; }
+.practice-page form button { font-size: .94rem; }
+.practice-page > div.flex-1 > p:first-child { font-size: .84rem; }
+
+@media (max-width: 640px) {
+  .landing-page > section:first-of-type .container { padding-top: 2.8rem; padding-bottom: 3.5rem; }
+  .landing-page h1 { font-size: 1.75rem; line-height: 1.13; }
+  .landing-page > section:nth-of-type(2) h2,
+  .landing-page > section:nth-of-type(3) h2,
+  .landing-page > section:last-of-type h2 { font-size: 1.45rem; }
+  .dashboard-page main > section:first-child h1 { font-size: 1.3rem; }
+  .practice-page .inline-block.font-mono { font-size: 1.4rem; }
+}
