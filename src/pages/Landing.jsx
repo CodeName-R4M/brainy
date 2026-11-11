@@ -1,12 +1,12 @@
 const FEATURES = [
-  { icon: '🎲', title: 'Dynamic Questions', desc: 'Algorithmically generated — never the same drill twice!', color: 'bg-warning/10 text-warning' },
-  { icon: '🪜', title: '9 Skill Levels', desc: 'From Junior to Level 8, perfectly matched to every learner.', color: 'bg-sky/10 text-sky' },
-  { icon: '✖️', title: 'Tables Mastery', desc: 'Master multiplication tables 2× through 100× with speed challenges.', color: 'bg-lime/10 text-lime' },
-  { icon: '🏆', title: 'Competitions', desc: 'Weekly challenges with fair seeding & leaderboards.', color: 'bg-gold/10 text-gold' },
-  { icon: '🎖️', title: 'Earn Badges', desc: 'Speed Demon, Perfect Score, Streak Warrior & more!', color: 'bg-accent/10 text-accent' },
-  { icon: '🔥', title: 'Day Streaks', desc: 'Build daily habits with streak tracking & milestone celebrations.', color: 'bg-tangerine/10 text-tangerine' },
-  { icon: '📊', title: 'Leaderboards', desc: 'Compete on points, speed, and accuracy across all modules.', color: 'bg-primary/10 text-primary' },
-  { icon: '⏱️', title: 'Timed Challenges', desc: 'Infinite mode, 2-10 min sessions — solve as many as you can!', color: 'bg-destructive/10 text-destructive' }
+  { icon: '↻', title: 'Dynamic Questions', desc: 'Algorithmically generated — never the same drill twice!', color: 'bg-warning/10 text-warning' },
+  { icon: '9', title: '9 Skill Levels', desc: 'From Junior to Level 8, perfectly matched to every learner.', color: 'bg-sky/10 text-sky' },
+  { icon: '×', title: 'Tables Mastery', desc: 'Master multiplication tables 2× through 100× with speed challenges.', color: 'bg-lime/10 text-lime' },
+  { icon: '♛', title: 'Competitions', desc: 'Weekly challenges with fair seeding & leaderboards.', color: 'bg-gold/10 text-gold' },
+  { icon: '★', title: 'Earn Badges', desc: 'Speed Demon, Perfect Score, Streak Warrior & more!', color: 'bg-accent/10 text-accent' },
+  { icon: '↗', title: 'Day Streaks', desc: 'Build daily habits with streak tracking & milestone celebrations.', color: 'bg-tangerine/10 text-tangerine' },
+  { icon: '▥', title: 'Leaderboards', desc: 'Compete on points, speed, and accuracy across all modules.', color: 'bg-primary/10 text-primary' },
+  { icon: '◷', title: 'Timed Challenges', desc: 'Infinite mode, 2-10 min sessions — solve as many as you can!', color: 'bg-destructive/10 text-destructive' }
 ];
 
 const STEPS = [
@@ -18,13 +18,13 @@ const STEPS = [
 
 export default function Landing({ user, onStart, onDashboard }) {
   return (
-    <div className="min-h-screen bg-background overflow-x-hidden">
+    <div className="min-h-screen bg-background overflow-x-hidden landing-page">
       {/* header */}
       <header className="sticky top-0 z-40 border-b border-border bg-background/80 backdrop-blur">
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
             <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-hero shadow-glow-primary">
-              <span className="text-lg text-primary-foreground">🧮</span>
+              <span className="text-lg font-black text-primary-foreground" aria-hidden="true">A</span>
             </div>
             <span className="text-lg font-extrabold">Abakids</span>
           </div>
@@ -45,7 +45,7 @@ export default function Landing({ user, onStart, onDashboard }) {
         <div className="container relative py-20 md:py-32">
           <div className="mx-auto max-w-4xl text-center">
             <div className="animate-scale-in">
-              <div className="mx-auto mb-8 flex h-32 w-32 items-center justify-center rounded-3xl bg-gradient-hero text-6xl shadow-glow-primary hover-scale-sm md:h-44 md:w-44 md:text-8xl">🧮</div>
+              <div className="mx-auto mb-8 flex h-32 w-32 items-center justify-center rounded-3xl bg-gradient-hero text-6xl font-black text-primary-foreground shadow-glow-primary hover-scale-sm md:h-44 md:w-44 md:text-8xl" aria-hidden="true">±</div>
             </div>
             <div className="animate-slide-up stagger-1 mb-6">
               <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-semibold text-primary">

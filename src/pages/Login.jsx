@@ -19,6 +19,10 @@ export default function Login({ onLogin }) {
 
   const submit = async (e) => {
     e.preventDefault();
+    if (!supabase) {
+      setError('Sign-in is unavailable until the app’s authentication service is configured.');
+      return;
+    }
     setLoading(true);
     setError(null);
     setNotice(null);
@@ -49,13 +53,18 @@ export default function Login({ onLogin }) {
       <div className="w-full max-w-sm animate-slide-up">
         <div className="mb-8 text-center">
           <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-hero shadow-glow-primary">
-            <span className="text-3xl text-primary-foreground">🧮</span>
+            <span className="text-3xl font-black text-primary-foreground" aria-hidden="true">A</span>
           </div>
           <h1 className="text-3xl font-extrabold">Abakids</h1>
           <p className="mt-1 text-muted-foreground">Test Your Math Speed</p>
         </div>
 
         <div className="rounded-2xl border border-border bg-card p-6">
+          {!supabase && (
+            <p className="mb-4 rounded-xl border border-primary/20 bg-primary/5 px-3 py-2.5 text-sm leading-relaxed text-muted-foreground" role="status">
+              Sign-in is currently unavailable because authentication has not been connected. No account or practice data will be simulated.
+            </p>
+          )}
           <div className="mb-5 grid grid-cols-2 gap-1 rounded-xl bg-muted p-1">
             <button
               type="button"
@@ -114,7 +123,7 @@ export default function Login({ onLogin }) {
 
             <button
               type="submit"
-              disabled={loading}
+              disabled={loading || !supabase}
               className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-hero px-4 py-3.5 font-semibold text-primary-foreground shadow-glow-primary transition-opacity hover:opacity-90 disabled:opacity-50"
             >
               {loading ? (isRegister ? 'Creating account...' : 'Signing in...') : isRegister ? 'Create Account' : 'Sign In'}

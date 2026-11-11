@@ -154,7 +154,7 @@ export default function Practice({ operation, level, onBack, userId }) {
   }
 
   return (
-    <div className="flex min-h-screen flex-col bg-background">
+    <div className="flex min-h-screen flex-col bg-background practice-page">
       <header className="flex items-center justify-between border-b border-border px-4 py-3">
         <button onClick={onBack} className="text-sm text-muted-foreground hover:text-foreground">← End</button>
         <div className={`font-mono text-2xl font-bold ${seconds <= 10 ? 'text-destructive animate-pulse' : 'text-warning'}`}>{seconds}s</div>
